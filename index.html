@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h2>Shuffle colors with Lodash</h2>
+    <p id="initial">Initial</p>
+    <p id="result">Click the button to shuffle!</p>
+    <button id="btn">Shuffle</button>
+    <button id="reset">Reset</button>
+
+    <!-- Lodash is loaded from a CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+
+    <script>
+      const colors = ["red", "orange", "yellow", "green", "blue", "purple"];
+      document.getElementById("initial").textContent = colors;
+
+      document.getElementById("btn").addEventListener("click", function () {
+        const shuffled = _.shuffle(colors);
+        document.getElementById("initial").textContent = shuffled;
+      });
+
+      document.getElementById("reset").addEventListener("click", function () {
+        document.getElementById("initial").textContent = colors;
+      });
+    </script>
+  </body>
+</html>
